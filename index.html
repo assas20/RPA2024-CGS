@@ -266,24 +266,138 @@
 
     <!-- Official Header -->
     <header class="official-header">
-        <div class="official-header-content">
-            <div class="official-section">
-                <div class="official-logo"><i class="fas fa-landmark"></i></div>
-                <div class="official-text">
-                    <h1>République Algérienne Démocratique et Populaire</h1>
-                    <h2>Ministère de l'Habitat, de l'Urbanisme et de la Ville</h2>
-                </div>
+    <div class="official-header-content">
+        
+        <div class="side-logo-container">
+            <img src="ministere-logo.png" alt="Logo Ministère" class="side-logo">
+        </div>
+
+        <div class="official-text-center">
+            <div class="lang-fr">
+                <h1>République Algérienne Démocratique et Populaire</h1>
+                <h2>Ministère de l'Habitat, de l'Urbanisme et de la Ville</h2>
             </div>
-            <div class="emblem-container"><div class="emblem">☪</div></div>
-            <div class="official-section arabic">
-                <div class="official-text arabic">
-                    <h1>الجمهورية الجزائرية الديمقراطية الشعبية</h1>
-                    <h2>وزارة السكن والعمران والمدينة</h2>
-                </div>
-                <div class="official-logo"><i class="fas fa-building"></i></div>
+            
+            <div class="header-divider"></div>
+            
+            <div class="lang-ar">
+                <h1>الجمهورية الجزائرية الديمقراطية الشعبية</h1>
+                <h2>وزارة السكن والعمران والمدينة</h2>
             </div>
         </div>
-    </header>
+
+        <div class="side-logo-container">
+            <img src="algeria-flag.png" alt="Drapeau Algérie" class="side-logo">
+        </div>
+
+    </div>
+</header>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+    .official-header {
+        background: #ffffff;
+        padding: 25px 40px; /* زيادة مساحة الهيدر */
+        border-bottom: 4px double #1a2a3a; /* خط مزدوج للفخامة */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .official-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* --- تنسيق النصوص الجديد --- */
+    .official-text-center {
+        text-align: center;
+        flex: 2; /* إعطاء مساحة أكبر للنص */
+        padding: 0 40px;
+    }
+
+    /* النصوص الفرنسية */
+    .lang-fr h1 {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.2rem; /* تكبير الخط */
+        margin: 0;
+        color: #1a2a3a;
+        font-weight: 800; /* خط عريض جداً */
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .lang-fr h2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        margin: 5px 0 0 0;
+        color: #444;
+        font-weight: 500;
+    }
+
+    /* فاصل أنيق بين اللغتين */
+    .header-divider {
+        width: 80px;
+        height: 2px;
+        background: #d4af37; /* لون ذهبي خفيف أو رمادي حسب الرغبة */
+        margin: 15px auto;
+    }
+
+    /* النصوص العربية */
+    .lang-ar {
+        direction: rtl;
+        font-family: 'Amiri', serif;
+    }
+
+    .lang-ar h1 {
+        font-size: 1.8rem; /* تكبير النص العربي */
+        margin: 0;
+        color: #1a2a3a;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .lang-ar h2 {
+        font-size: 1.4rem;
+        margin: 8px 0 0 0;
+        color: #333;
+        font-weight: 400;
+    }
+
+    /* --- تنسيق الشعارات الجديد (التكبير) --- */
+    .side-logo {
+        height: 110px; /* تم التكبير من 75 إلى 110 بكسل */
+        width: auto;
+        object-fit: contain;
+        /* فلتر لتحسين وضوح الشعار */
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    }
+
+    .side-logo-container {
+        width: 160px; /* زيادة مساحة الحاوية لتناسب التكبير */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    /* التجاوب مع الهواتف */
+    @media (max-width: 850px) {
+        .official-header-content {
+            flex-direction: column;
+            gap: 20px;
+        }
+        .side-logo {
+            height: 80px; /* تصغير طفيف فقط في الجوال */
+        }
+        .official-text-center {
+            padding: 0;
+            order: 2;
+        }
+    }
+</style>
 
     <!-- Main Navigation -->
     <nav class="main-nav">
