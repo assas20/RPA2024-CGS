@@ -217,6 +217,141 @@
         .back-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--bg-secondary); border: 2px solid var(--bg-tertiary); border-radius: 25px; color: var(--text-secondary); font-weight: 600; cursor: pointer; margin-bottom: 20px; transition: all 0.3s; }
         .back-btn:hover { background: var(--bright-green); color: white; border-color: var(--bright-green); transform: translateX(-5px); }
 
+        /* Annexes View */
+        .annexes-container { background: white; border-radius: 24px; padding: 40px; box-shadow: var(--shadow-md); border: 2px solid var(--bright-green-light); }
+        .annexes-header { text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 3px solid var(--bg-tertiary); }
+        .annexes-icon { width: 80px; height: 80px; background: linear-gradient(135deg, var(--bright-orange) 0%, var(--bright-gold) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white; margin: 0 auto 20px; box-shadow: 0 4px 20px rgba(255, 145, 0, 0.3); }
+        .annexes-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+        
+        .annexes-list { display: flex; flex-direction: column; gap: 20px; }
+        .annex-item { background: var(--bg-secondary); border-radius: 16px; padding: 25px; border-left: 4px solid var(--bright-orange); transition: all 0.3s ease; display: flex; justify-content: space-between; align-items: center; }
+        .annex-item:hover { transform: translateX(5px); box-shadow: var(--shadow-md); border-left-color: var(--bright-gold); }
+        .annex-content { flex: 1; }
+        .annex-letter { display: inline-block; background: var(--gradient-gold); color: var(--text-primary); width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
+        .annex-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+        .annex-page { font-size: 0.9rem; color: var(--bright-blue); font-weight: 600; }
+        .annex-actions { display: flex; gap: 10px; }
+        .annex-btn { padding: 10px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s; border: none; display: flex; align-items: center; gap: 8px; }
+        .annex-btn-web { background: var(--gradient-blue); color: white; }
+        .annex-btn-pdf { background: var(--gradient-gold); color: var(--text-primary); }
+        .annex-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+
+        /* Documents View */
+        .documents-container { background: white; border-radius: 24px; padding: 40px; box-shadow: var(--shadow-md); border: 2px solid var(--bright-green-light); }
+        .documents-header { text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 3px solid var(--bg-tertiary); }
+        .documents-icon { width: 80px; height: 80px; background: linear-gradient(135deg, var(--bright-red) 0%, var(--bright-orange) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white; margin: 0 auto 20px; box-shadow: 0 4px 20px rgba(255, 23, 68, 0.3); }
+        .documents-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+        
+        .doc-category { margin-bottom: 40px; }
+        .doc-category-title { font-size: 1.3rem; font-weight: 700; color: var(--bright-green-dark); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 2px solid var(--bg-tertiary); }
+        .doc-category-title i { color: var(--bright-gold); }
+        
+        .doc-list { display: flex; flex-direction: column; gap: 15px; }
+        .doc-item { background: var(--bg-secondary); border-radius: 12px; padding: 20px; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s; border: 2px solid transparent; }
+        .doc-item:hover { border-color: var(--bright-green-light); transform: translateX(5px); box-shadow: var(--shadow-sm); }
+        .doc-info { flex: 1; }
+        .doc-name { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 5px; }
+        .doc-meta { font-size: 0.85rem; color: var(--text-muted); }
+        .doc-actions { display: flex; gap: 10px; }
+        .doc-btn { padding: 8px 16px; border-radius: 15px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.3s; border: none; display: flex; align-items: center; gap: 6px; }
+        .doc-btn-pdf { background: var(--bright-red); color: white; }
+        .doc-btn-web { background: var(--bright-blue); color: white; }
+        .doc-btn:hover { transform: scale(1.05); }
+
+        /* Modal for PDF/HTML Viewer */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            height: 90%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .modal-header {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-title { font-size: 1.2rem; font-weight: 700; }
+        .modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        .modal-close:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
+        .modal-body {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .modal-body .pdf-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        .modal-body .pdf-fallback i {
+            font-size: 4rem;
+            color: var(--bright-red);
+            margin-bottom: 20px;
+        }
+        .modal-body .pdf-fallback h3 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .modal-body .pdf-fallback p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .modal-body .pdf-fallback a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient-gold);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .modal-body .pdf-fallback a:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
         /* Footer */
         footer { background: linear-gradient(135deg, var(--bright-blue) 0%, var(--bright-green) 100%); color: white; padding: 60px 40px 40px; margin-top: 60px; border-top: 5px solid var(--bright-gold); }
         .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
@@ -233,6 +368,7 @@
             .main-container { padding: 20px; } 
             .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; } 
             .official-header-content { flex-wrap: wrap; gap: 20px; justify-content: center; }
+            .modal-content { width: 95%; height: 95%; }
         }
         @media (max-width: 768px) { 
             .nav-links { flex-wrap: wrap; justify-content: center; } 
@@ -242,6 +378,8 @@
             .chapters-grid, .team-grid, .members-list { grid-template-columns: 1fr; }
             .chapter-actions { flex-direction: column; align-items: center; }
             .footer-content { grid-template-columns: 1fr; }
+            .annex-item { flex-direction: column; gap: 15px; text-align: center; }
+            .doc-item { flex-direction: column; gap: 15px; text-align: center; }
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -424,8 +562,8 @@
                     </div>
                 </li>
                 <li><a href="#" onclick="showChaptersList()"><i class="fas fa-book"></i> Chapitres</a></li>
-                <li><a href="#" onclick="showNotification('Section Annexes - Bientôt disponible', 'info')"><i class="fas fa-file-alt"></i> Annexes</a></li>
-                <li><a href="#" onclick="showNotification('Section Documents - Bientôt disponible', 'info')"><i class="fas fa-folder-open"></i> Documents</a></li>
+                <li><a href="#" onclick="showAnnexes()"><i class="fas fa-file-alt"></i> Annexes</a></li>
+                <li><a href="#" onclick="showDocuments()"><i class="fas fa-folder-open"></i> Documents</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </div>
@@ -487,6 +625,49 @@
             </div>
         </div>
 
+        <!-- Annexes View -->
+        <div class="content-view" id="annexesView">
+            <button class="back-btn" onclick="showHome()"><i class="fas fa-arrow-left"></i> Retour à l'accueil</button>
+            <div class="annexes-container">
+                <div class="annexes-header">
+                    <div class="annexes-icon"><i class="fas fa-paperclip"></i></div>
+                    <h2 class="annexes-title">ANNEXES</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">Documents complémentaires et références techniques</p>
+                </div>
+                <div class="annexes-list" id="annexesList">
+                    <!-- Generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Documents View -->
+        <div class="content-view" id="documentsView">
+            <button class="back-btn" onclick="showHome()"><i class="fas fa-arrow-left"></i> Retour à l'accueil</button>
+            <div class="documents-container">
+                <div class="documents-header">
+                    <div class="documents-icon"><i class="fas fa-archive"></i></div>
+                    <h2 class="documents-title">DOCUMENTS</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">Ressources officielles et documents de référence</p>
+                </div>
+                <div id="documentsContent">
+                    <!-- Generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal for PDF/HTML Viewer -->
+    <div class="modal-overlay" id="viewerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">Document</span>
+                <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content injected by JavaScript -->
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -520,8 +701,8 @@
             <div class="footer-links">
                 <h4>Ressources</h4>
                 <ul>
-                    <li><a href="#">Guide d'application</a></li>
-                    <li><a href="#">Logiciels agréés</a></li>
+                    <li><a href="#" onclick="showAnnexes()">Annexes</a></li>
+                    <li><a href="#" onclick="showDocuments()">Documents</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </div>
@@ -581,6 +762,72 @@
             renderChapterDetail(num);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        function showAnnexes() {
+            hideAllViews();
+            document.getElementById('annexesView').classList.add('active');
+            renderAnnexes();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showDocuments() {
+            hideAllViews();
+            document.getElementById('documentsView').classList.add('active');
+            renderDocuments();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Modal Functions
+        function openModal(title, type, src) {
+            const modal = document.getElementById('viewerModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalTitle.textContent = title;
+            
+            if (type === 'pdf') {
+                // Try to embed PDF, fallback to download link if not supported
+                modalBody.innerHTML = `
+                    <object data="${src}" type="application/pdf" width="100%" height="100%">
+                        <div class="pdf-fallback">
+                            <i class="fas fa-file-pdf"></i>
+                            <h3>Visualiseur PDF non disponible</h3>
+                            <p>Le fichier PDF ne peut pas être affiché directement dans le navigateur.</p>
+                            <a href="${src}" target="_blank" download>
+                                <i class="fas fa-download"></i> Télécharger le PDF
+                            </a>
+                        </div>
+                    </object>
+                `;
+            } else if (type === 'html') {
+                modalBody.innerHTML = `<iframe src="${src}" title="${title}"></iframe>`;
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('viewerModal');
+            const modalBody = document.getElementById('modalBody');
+            modal.classList.remove('active');
+            modalBody.innerHTML = ''; // Clear content
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Close modal on overlay click
+        document.getElementById('viewerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
 
         // Work Group Data
         const workGroupData = {
@@ -1046,6 +1293,165 @@
             }
         };
 
+        // Annexes Data
+        const annexesData = [
+            { 
+                letter: "A", 
+                title: "ZONAGE SISMIQUE : WILAYAS & COMMUNES", 
+                page: 179,
+                hasWeb: true,
+                hasPDF: true
+            },
+            { 
+                letter: "B", 
+                title: "RECOMMANDATIONS : ETUDES GEOTECHNIQUES", 
+                page: 189,
+                hasWeb: true,
+                hasPDF: true
+            },
+            { 
+                letter: "C", 
+                title: "FACTEURS D'AMPLIFICATION TOPOGRAPHIQUE", 
+                page: 191,
+                hasWeb: true,
+                hasPDF: true
+            },
+            { 
+                letter: "D", 
+                title: "DISPOSITIONS : VOILES DE GRANDE DIMENSION", 
+                page: 193,
+                hasWeb: true,
+                hasPDF: true,
+                subItems: [
+                    "D.1 Dimensions minimales",
+                    "D.2 Chainages minimaux en zone critique",
+                    "D.3 Chainages minimaux en zone courante"
+                ]
+            },
+            { 
+                letter: "E", 
+                title: "CONSTRUCTIONS EN PROFILES FORMES A FROID", 
+                page: 195,
+                hasWeb: true,
+                hasPDF: true,
+                subItems: [
+                    "E.1 CONDITIONS ET DOMAINE D'APPLICATION",
+                    "E.1.1 Principes généraux",
+                    "E.1.2 Sections transversales",
+                    "E.1.3 Boulonnerie - visserie",
+                    "E.1.4 Dispositions des panneaux",
+                    "E.1.5 Dispositions particulières pour les zones sismiques IV, V et VI",
+                    "E.1.6 Types de contreventement"
+                ]
+            },
+            { 
+                letter: "F", 
+                title: "CONSTRUCTIONS EN BOIS", 
+                page: 199,
+                hasWeb: true,
+                hasPDF: true,
+                subItems: [
+                    "F.1 Conditions et domaine d'application",
+                    "F.2 Matériaux",
+                    "F.2.1 Le bois",
+                    "F.2.2 L'acier",
+                    "F.3 Règles générales de conception",
+                    "F.3.1 Principe de dimensionnement",
+                    "F.3.2 Propriétés des zones dissipatives",
+                    "F.3.3 Contreventement",
+                    "F.4 Coefficient de comportement",
+                    "F.5 Coefficient d'amortissement",
+                    "F.6 Analyse de la structure",
+                    "F.7 Règles de détail pour les assemblages",
+                    "F.8 Règles de détail pour les diaphragmes horizontaux",
+                    "F.9 Contrôle du dimensionnement et de l'exécution"
+                ]
+            },
+            { 
+                letter: "G", 
+                title: "DISPOSITIFS D'ISOLATION & COMPORTEMENT", 
+                page: 205,
+                hasWeb: true,
+                hasPDF: true,
+                subItems: [
+                    "G.1 Les dispositifs à comportement linéaire",
+                    "G.2 Les dispositifs à comportement non-linéaire"
+                ]
+            },
+            { 
+                letter: "H", 
+                title: "LISTE DES SEISMES NOTABLES (depuis 1365 ...)", 
+                page: 209,
+                hasWeb: true,
+                hasPDF: true
+            },
+            { 
+                letter: "I", 
+                title: "ACTIONS SISMIQUES & PERIODES DE RETOUR", 
+                page: 215,
+                hasWeb: true,
+                hasPDF: true,
+                subItems: [
+                    "I.1 Accélération de zone: valeurs caractéristiques",
+                    "I.2 Coefficient d'importance vs. périodes de retour"
+                ]
+            },
+            { 
+                letter: "J", 
+                title: "INTRODUCTION AU CALCUL CAPACITAIRE", 
+                page: 219,
+                hasWeb: true,
+                hasPDF: true,
+                subItems: [
+                    "J.1 Principes et exigences de la méthode",
+                    "J.2 Procédure statique non linéaire (Pushover)",
+                    "J.2.1 Charge latérale et courbe de capacité",
+                    "J.2.2 Système équivalent à un seul degré de liberté (1 DDL)",
+                    "J.2.3 Comportement idéalisé force-déplacement de la structure",
+                    "J.2.4 Détermination du déplacement cible pour le système équivalent à 1 DDL",
+                    "J.2.5 Détermination du déplacement cible pour le système à N DDL"
+                ]
+            }
+        ];
+
+        // Documents Data
+        const documentsData = [
+            {
+                category: "Documents officiels et textes réglementaires",
+                icon: "fa-gavel",
+                items: [
+                    { name: "Règles Parasismiques Algériennes RPA 81", type: "pdf", year: "1981" },
+                    { name: "Règles Parasismiques Algériennes RPA 81 – Version 1983", type: "pdf", year: "1983" },
+                    { name: "Règles Parasismiques Algériennes RPA 88", type: "pdf", year: "1988" },
+                    { name: "Règles Parasismiques Algériennes RPA 99", type: "pdf", year: "1999" },
+                    { name: "Règles Parasismiques Algériennes RPA 99 / Version 2003", type: "pdf", year: "2003" },
+                    { name: "Document Technique Réglementaire DTR‑BC 2.48 – Règles Parasismiques Algériennes RPA 2024", type: "pdf", year: "2024" }
+                ]
+            },
+            {
+                category: "Travaux universitaires et analyses techniques",
+                icon: "fa-graduation-cap",
+                items: [
+                    { name: "Application du RPA 99 / Version 2003 au calcul d'un bâtiment en béton armé", type: "pdf", year: "Étude" },
+                    { name: "Conception parasismique d'un immeuble selon RPA 2024", type: "pdf", year: "Étude" },
+                    { name: "Comparaison entre RPA 99/2003 et RPA 2024", type: "pdf", year: "Analyse" },
+                    { name: "Étude dynamique d'un bâtiment selon RPA 88", type: "pdf", year: "Étude" },
+                    { name: "Analyse non linéaire d'une structure conformément au RPA 99", type: "pdf", year: "Recherche" }
+                ]
+            },
+            {
+                category: "Analyses scientifiques et comparatives",
+                icon: "fa-chart-line",
+                items: [
+                    { name: "Évolution des Règles Parasismiques Algériennes (1981–2024)", type: "pdf", year: "Historique" },
+                    { name: "Comparaison des spectres de réponse entre RPA 99/2003 et RPA 2024", type: "pdf", year: "Comparaison" },
+                    { name: "Analyse critique du zonage sismique dans les différentes versions des RPA", type: "pdf", year: "Analyse" },
+                    { name: "Comparaison entre RPA et Eurocode 8", type: "pdf", year: "Comparaison" },
+                    { name: "Comparaison entre RPA et UBC", type: "pdf", year: "Comparaison" }
+                ]
+            }
+        ];
+
         function renderChaptersList() {
             const grid = document.getElementById('chaptersGrid');
             grid.innerHTML = chaptersData.map(ch => `
@@ -1080,28 +1486,97 @@
                     ${tocHTML}
                 </div>
                 <div class="chapter-actions">
-                    <button class="chapter-action-btn chapter-action-web" onclick="openWebVersion(${num})">
+                    <button class="chapter-action-btn chapter-action-web" onclick="openChapterWeb(${num})">
                         <i class="fas fa-globe"></i> Web
                     </button>
-                    <button class="chapter-action-btn chapter-action-pdf" onclick="downloadPDF(${num})">
+                    <button class="chapter-action-btn chapter-action-pdf" onclick="openChapterPDF(${num})">
                         <i class="fas fa-file-pdf"></i> Télécharger Chapitre
                     </button>
                 </div>
             `;
         }
 
-        function openWebVersion(chapter) {
-            // Open local HTML file
+        function openChapterWeb(chapter) {
             const fileName = `chapitre${chapter.toString().padStart(2, '0')}.html`;
-            showNotification(`Ouverture de ${fileName}...`, 'success');
-            // window.open(fileName, '_blank');
+            openModal(`Chapitre ${chapter} - Version Web`, 'html', fileName);
         }
 
-        function downloadPDF(chapter) {
-            // Open local PDF file
+        function openChapterPDF(chapter) {
             const fileName = `chapitre${chapter.toString().padStart(2, '0')}.pdf`;
-            showNotification(`Téléchargement de ${fileName}...`, 'success');
-            // window.open(fileName, '_blank');
+            openModal(`Chapitre ${chapter} - Version PDF`, 'pdf', fileName);
+        }
+
+        function renderAnnexes() {
+            const container = document.getElementById('annexesList');
+            container.innerHTML = annexesData.map(annex => `
+                <div class="annex-item">
+                    <div class="annex-content">
+                        <div class="annex-letter">${annex.letter}</div>
+                        <div class="annex-title">${annex.title}</div>
+                        <div class="annex-page">Page ${annex.page}</div>
+                        ${annex.subItems ? `
+                            <div style="margin-top: 10px; padding-left: 20px; font-size: 0.85rem; color: var(--text-muted);">
+                                ${annex.subItems.map(item => `<div style="margin: 3px 0;">• ${item}</div>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="annex-actions">
+                        ${annex.hasWeb ? `
+                            <button class="annex-btn annex-btn-web" onclick="openAnnexWeb('${annex.letter}')">
+                                <i class="fas fa-globe"></i> Web
+                            </button>
+                        ` : ''}
+                        ${annex.hasPDF ? `
+                            <button class="annex-btn annex-btn-pdf" onclick="openAnnexPDF('${annex.letter}')">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openAnnexWeb(letter) {
+            const fileName = `annexe${letter}.html`;
+            openModal(`Annexe ${letter} - Version Web`, 'html', fileName);
+        }
+
+        function openAnnexPDF(letter) {
+            const fileName = `annexe${letter}.pdf`;
+            openModal(`Annexe ${letter} - Version PDF`, 'pdf', fileName);
+        }
+
+        function renderDocuments() {
+            const container = document.getElementById('documentsContent');
+            container.innerHTML = documentsData.map(category => `
+                <div class="doc-category">
+                    <div class="doc-category-title">
+                        <i class="fas ${category.icon}"></i>
+                        ${category.category}
+                    </div>
+                    <div class="doc-list">
+                        ${category.items.map(doc => `
+                            <div class="doc-item">
+                                <div class="doc-info">
+                                    <div class="doc-name">${doc.name}</div>
+                                    <div class="doc-meta">${doc.year} • ${doc.type.toUpperCase()}</div>
+                                </div>
+                                <div class="doc-actions">
+                                    <button class="doc-btn doc-btn-pdf" onclick="openDocument('${doc.name}', '${doc.type}')">
+                                        <i class="fas fa-file-pdf"></i> PDF
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openDocument(name, type) {
+            // Convert name to filename (simplified)
+            const fileName = name.toLowerCase().replace(/[^a-z0-9]/g, '_') + '.pdf';
+            openModal(name, 'pdf', fileName);
         }
 
         // Dropdown toggle for mobile
@@ -1153,6 +1628,7 @@
             if (e.key === 'Escape') {
                 const notification = document.querySelector('.notification');
                 if (notification) notification.remove();
+                closeModal();
             }
         });
 
