@@ -149,3 +149,373 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>RPA 2024 - Texte Intégral (Page 23-32)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; line-height: 1.6; color: #000; background: #f0f0f0; margin: 0; padding: 20px; }
+        .page { background: #fff; width: 210mm; min-height: 297mm; padding: 20mm; margin: 0 auto 30px auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); position: relative; }
+        .page-number { position: absolute; top: 10mm; right: 15mm; font-weight: bold; }
+        .header-section { text-align: center; margin-bottom: 20px; border-bottom: 1px solid #000; padding-bottom: 10px; }
+        .arabic { direction: rtl; font-family: "Arial", sans-serif; font-size: 1.1em; }
+        h1, h2, h3, h4 { text-transform: uppercase; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #000; padding: 5px 10px; text-align: left; vertical-align: top; }
+        .formula { text-align: center; margin: 15px 0; font-style: italic; position: relative; }
+        .formula-num { position: absolute; right: 0; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        .commentary { margin: 15px 0; padding-left: 10px; border-left: 2px solid #555; }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="page-number">23</div>
+    <h1>1 GÉNÉRALITÉS</h1>
+    <table>
+        <tr><td>1.1</td><td>Objet</td><td>23</td></tr>
+        <tr><td>1.2</td><td>Objectifs</td><td>23</td></tr>
+        <tr><td>1.3</td><td>Domaine d'application</td><td>24</td></tr>
+        <tr><td>1.4</td><td>Conditions d'application</td><td>25</td></tr>
+        <tr><td>1.5</td><td>Définitions et notations</td><td>25</td></tr>
+    </table>
+    
+    <div style="margin-top: 50px;">
+        <div class="header-section">
+            <p>RÉPUBLIQUE ALGÉRIENNE DÉMOCRATIQUE ET POPULAIRE</p>
+            <p>Ministère de L'Habitat, de l'Urbanisme et de la Ville</p>
+            <div class="arabic">الجمهورية الجزائرية الديمقراطية الشعبية</div>
+            <div class="arabic">وزارة السكن والعمران والمدينة</div>
+        </div>
+
+        <h2>1. GÉNÉRALITÉS</h2>
+        <h3>1.1 Objet</h3>
+        <p>Le présent Document Technique Réglementaire (DTR) fixe les règles de conception et de calcul des constructions en zones sismiques.</p>
+
+        <h3>1.2 Objectifs</h3>
+        <p>En zone sismique, les structures doivent être conçues et construites de sorte que soient respectés :</p>
+        <ul>
+            <li>les objectifs de non-effondrement et</li>
+            <li>les objectifs de limitation des dommages</li>
+        </ul>
+
+        <h4>1.2.1 Objectifs de non-effondrement</h4>
+        <p>La structure doit être conçue et construite de manière à résister aux actions sismiques de calcul définies au § 3.3, sans effondrement local ou global, conservant ainsi son intégrité structurale et une capacité portante résiduelle après l'événement sismique. L'action sismique de calcul est définie à partir de :</p>
+        <p>a l'accélération de zone, A, dont la valeur caractéristique, \(A_{k}\) associée aux séismes, a une probabilité de dépassement, \(P_{r}\) pendant la période de référence, \(T_{L}\), qui représente, ici, la durée de vie du bâtiment. Cette valeur caractéristique a une période de retour, \(T_{r}\) (cf. Tableaux (3.2). & Annexe I;</p>
+        <p>b le coefficient de site, S, afin de rendre compte de la classe de site qui reçoit le bâtiment (cf. Tableaux (3.7) & (3.8)) et</p>
+        <p>c le coefficient d'importance, I, afin de rendre compte de la classe d'importance du bâtiment (cf. Tableaux (3.10) & Annexe I).</p>
+        <p>La période de retour, \(T_{r}\) de l'action sismique de valeur caractéristique, \(A_{k}\), est liée à la valeur de sa probabilité de dépassement, \(P_{r}\) pendant la durée de vie du bâtiment, \(T_{L},\) (cf. Annexe I):</p>
+        <div class="formula">
+            \(T_{r}=-\frac{T_{L}}{Ln(1-P_{r})}\) <span class="formula-num">(1.1)</span>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="page-number">24</div>
+    <p>Chapter 1. GÉNÉRALITÉS</p>
+    <p>Les valeurs choisies pour \(P_{r}\) et \(T_{L}\) sont, respectivement, \(P_{r}=10\%\) et \(T_{L}=50\) ans soit une période de retour \(T_{r}=475\) ans.</p>
+
+    <h4>1.2.2 Objectifs de limitation des dommages</h4>
+    <p>La structure doit non seulement résister à la valeur caractéristique, \(A_{k}\), mais être aussi conçue et construite de manière à ce que n'apparaissent pas des dommages induisant des limitations d'exploitation, sous l'effet d'une valeur de l'action, \(A_{k,LD}\), associée aux séismes ayant des périodes de retour moindres i.e. plus fréquents que ceux pris pour la condition de non-effondrement.</p>
+
+    <div class="commentary">
+        <p>Commentaire (1): La valeur de l'action, \(A_{k,LD},\) à prendre en compte pour l'objectif de «limitation des dommages» est choisie comme ayant une probabilité de dépassement, \(P_{r,LD}=10\%\) pour une période de référence, \(T_{L,LD}=10\) ans i.e. ayant une période de retour \(T_{r,LD}=95\) ans. En l'absence d'informations plus précises, le coefficient de réduction appliqué à l'action sismique de calcul peut être utilisé pour obtenir l'action sismique permettant de vérifier l'objectif de «limitation des dommages» (cf. commentaire 5 & Annexe I).</p>
+        <p>Commentaire (2): L'importance des structures visées par l'objectif de «non-effondrement» et celui de « limitation des dommages» est définie pour les différents types de bâtiments ou d'ouvrages de génie civil, en fonction des conséquences que peut avoir leur ruine (sous \(A_{k}\)) ou leur mise en incapacité d'assurer les exigences fonctionnelles et ne pouvant, donc, plus être maintenues en service (sous \(A_{k,LD}\)).</p>
+        <p>Commentaire (3): La différentiation de l'importance des structures est obtenue en les classant en divers groupes d'importance. Un coefficient d'importance, I, est attribué à chaque catégorie.</p>
+        <p>Commentaire (4): La valeur du coefficient d'importance, I, associée à une période de retour, \(T_{r}^{*}\) autre que la période de retour, \(T_{r}\) peut être calculée selon Eqn. 1.2 (cf. Tableau (3.10) & Annexe 1)</p>
+        <div class="formula">\(I=(\frac{T_{r}}{T_{r}^{*}})^{\frac{-1}{k}}\) <span class="formula-num">(1.2)</span></div>
+        <p>L'exposant k dépend de la sismicité locale: sa valeur moyenne est égale à 2.7.</p>
+        <p>Commentaire (5): On définit un coefficient réducteur, \(V_{A}\), pour prendre en compte le passage de la période de retour associée à l'objectif de non-effondrement, \(T_{r}\), à la période de retour associée à l'objectif de limitation des dommages, \(T_{r,LD}=95\) ans, comme suit (cf. Annexe I):</p>
+        <div class="formula">\(v_{A}=(\frac{T_{r}}{T_{r,LD}})^{\frac{-1}{k}}\) <span class="formula-num">(1.3)</span></div>
+        <p>Commentaire (6): Le Coefficient réducteur \(V_{A}\) est pris égal à sa valeur moyenne, i.e. 0.5 (cf. Annexe I)</p>
+    </div>
+
+    <h3>1.3 Domaine d'application</h3>
+    <p>Le présent DTR est applicable à toutes les constructions courantes (cf. Commentaire (1)). Par contre, elles ne sont pas applicables aux constructions telles que:</p>
+</div>
+
+<div class="page">
+    <div class="page-number">25</div>
+    <ul>
+        <li>constructions et installations pour lesquelles les conséquences d'un dommage même léger peuvent être d'une exceptionnelle gravité: centrales nucléaires, installations GNL, installations de fabrication et de stockage des produits inflammables, explosifs, toxiques ou polluants.</li>
+        <li>ouvrages d'art (barrages, ouvrages maritimes, ponts, tunnels, etc.).</li>
+        <li>réseaux et ouvrages enterrés.</li>
+        <li>bâtiments de grande longueur dont les points d'appuis ne sont pas solidarisés par des longrines ou des dallages rigides, tels que les halls industriels, parkings couverts, etc. (cf. Commentaire (2))</li>
+    </ul>
+    <p>Pour ces types de constructions, il y a lieu de se référer à des règles ou recommandations spécifiques.</p>
+    <p>Les constructions courantes concernées par le présent DTR, sont celles qui utilisent les systèmes de contreventement listés dans le Tableau (3.17).</p>
+    <p>Par ailleurs les dispositions du présent DTR ne s'appliquent pas en zone de sismicité négligeable (zone 0) de la classification des zones sismiques (cf. § 3.1).</p>
+    
+    <div class="commentary">
+        <p>Commentaire (1): On entend par construction courante toute construction dont la ruine ou les dommages ne peuvent avoir de conséquences sur l'environnement (hormis ses abords immédiats). Par ailleurs, le présent DTR est essentiellement applicable aux bâtiments à un ou plusieurs niveaux d'usage courant (habitation, service, production, etc.) ou à des bâtiments assimilés (tels que châteaux d'eau, par exemple).</p>
+        <p>Commentaire (2): On entend par bâtiment de grande longueur un bâtiment dont la distance entre deux (2) appuis extrêmes est supérieure à 200 m. Dans ce cas, il y a lieu de produire une justification spéciale relative aux effets de la variabilité spatiale du mouvement sismique.</p>
+    </div>
+
+    <h3>1.4 Conditions d'application</h3>
+    <p>Le présent DTR s'applique, concomitamment à tous les DTR, en vigueur, pour la conception, le calcul et l'exécution couvrant les constructions, relevant du domaine d'application cité en § 1.3, leurs typologies structurelles (systèmes de contreventement) et leurs matériaux constitutifs. Les exigences, limitations et dispositions constructives prescrites, par le présent DTR, s'appliquent en sus de celles définies par les autres DTR, en vigueur. L'application rationnelle et efficace du présent DTR suppose une coopération et une coordination étroite entre les différents intervenants à chaque stade de la conception et de la réalisation du projet.</p>
+
+    <h3>1.5 Définitions et notations</h3>
+    <h4>1.5.1 Définitions</h4>
+    <p>1. Amortissement effectif (du système d'isolation dans une direction principale): Valeur de l'amortissement visqueux correspondant à l'énergie dissipée par le système d'isolation lors de la réponse cyclique au déplacement de calcul.</p>
+    <p>2. Bâtiment de grande longueur c'est un bâtiment dont la distance entre deux appuis extrêmes est supérieure à 200 m.</p>
+    <p>3. Béton confiné: On désigne par béton confiné, un volume de béton pourvu d'armatures transversales disposées de façon à s'opposer au gonflement du matériau sous l'effet des contraintes de compression ainsi qu'au flambement des armatures longitudinales.</p>
+    <p>4. Centre de rigidité effectif Centre de rigidité des unités d'isolation.</p>
+</div>
+
+<div class="page">
+    <div class="page-number">26</div>
+    <p>Chapter 1. GÉNÉRALITÉS</p>
+    <p>5. Classe de site En fonction des propriétés mécaniques des sols qui constituent le site, ce dernier est classé en cinq catégories (rocheux, ferme, meuble, très meuble ou spécial nécessitant investigations approfondies et études spécifiques)</p>
+    <p>6. Construction courante: Toute construction dont la ruine ou les dommages ne peuvent avoir de conséquences sur l'environnement (hormis ses abords immédiats).</p>
+    <p>7. Déformation élastique: Déformation réversible qui disparaît après suppression des charges qui l'ont provoquée.</p>
+    <p>8. Déformation post-élastique: Déformation irréversible d'éléments réalisés en matériaux ductiles (accompagnée de dissipation d'énergie après dépassement de la limite d'élasticité).</p>
+    <p>9. Déplacement de calcul (du système d'isolation dans une direction principale): Déplacement horizontal maximal du centre de rigidité effectif entre le sommet de l'infrastructure et la base de la superstructure, se produisant sous l'effet de l'action sismique de calcul.</p>
+    <p>10. Déplacement de calcul total (d'une unité d'isolation dans une direction principale): Déplacement horizontal maximal à l'emplacement de l'unité, comprenant le déplacement dû au déplacement de calcul et celui dû à la rotation globale de torsion autour de l'axe vertical.</p>
+    <p>11. Diaphragme: Elément horizontal (plancher) conçu pour résister aux forces qui agissent dans son plan et les transmettre aux éléments de contreventement.</p>
+    <p>12. Dispositifs ou unités d'isolation: Eléments constituant le système d'isolation. Les dispositifs considérés se composent d'appuis en élastomère fretté, de dispositifs élasto-plastiques, d'amortisseurs visqueux ou à frottement, de pendules et d'autres dispositifs dont le comportement est conforme au § 11.1 (cf. aussi Annexe G). Chaque unité fournit une ou une combinaison des fonctions suivantes:</p>
+    <ul>
+        <li>une capacité portante verticale combinée avec une flexibilité latérale accrue et une rigidité verticale élevée ;</li>
+        <li>une dissipation d'énergie, soit hystérétique, soit visqueuse;</li>
+        <li>une capacité de recentrage;</li>
+        <li>une capacité à s'opposer (rigidité élastique suffisante) aux charges latérales de service non sismiques.</li>
+    </ul>
+    <p>13. Ductilité: Capacité d'un élément ou d'une structure de conserver sa résistance sous les déformations qu'ils sont amenés à subir pendant un séisme.</p>
+    <p>14. Eléments non-structuraux: Eléments n'ayant pas de fonction porteuse ou de contreventement (cloisons, acrotères, auvents ...).</p>
+    <p>15. Eléments structuraux:</p>
+    <ul>
+        <li>Eléments principaux: éléments porteurs faisant partie du système de contreventement (poutres, poteaux, planchers, voiles, mur ...)</li>
+        <li>Eléments secondaires: éléments porteurs ne faisant pas partie du système de contreventement (poteaux, murs....)</li>
+    </ul>
+    <p>Essai SPT: Essais de pénétration standard (Standard Penetration Test)</p>
+    <p>Essai CPT: Essais de pénétration statique (Cone Penetration Test)</p>
+    <p>Essai PMT: Essais pressiométrique de Menard</p>
+    <p>16. Faille active: Fracture de l'écorce terrestre sur laquelle un glissement s'est produit à une période géologique récente. Elle constitue ainsi, une source sismique qui peut engendrer un futur séisme.</p>
+    <p>17. Infrastructure (du système d'isolation) Partie de la structure située sous l'interface d'isolation, y compris les fondations. La flexibilité latérale de l'infrastructure est généralement négligeable par rapport à celle du système d'isolation.</p>
+    <p>18. Instabilité élastique: Instabilité de forme d'un élément de structure due à son élasticité et à son manque de rigidité latérale. Elle peut se produire par flambage, déversement, cloquage,</p>
+</div>
+
+<div class="page">
+    <div class="page-number">27</div>
+    <p>1.5 Définitions et notations</p>
+    <p>voilement d'élément ou de parois élancés, comprimés et/ou cisaillés (poteaux, poutres, voiles, barre de contreventement, âme de poutre, etc.).</p>
+    <p>19. Interface d'isolation: Surface qui sépare l'infrastructure de la superstructure et où se situe le système d'isolation. L'emplacement de l'interface d'isolation à la base de la structure est le mode le plus général dans les bâtiments, les réservoirs et les silos.</p>
+    <p>20. Isolation totale: La superstructure est entièrement isolée si, dans la situation sismique de calcul, son comportement mécanique reste dans le domaine élastique. Dans le cas contraire, la superstructure est partiellement isolée.</p>
+    <p>21. Liquéfaction d'un sol: Perte momentanée de la résistance au cisaillement et/ou de la rigidité due à l'augmentation des pressions d'eau interstitielle, dans les matériaux sableux saturés sous l'effet de mouvements sismiques, pouvant entraîner des déformations permanentes significatives, voire une quasi-annulation des contraintes effectives dans le sol.</p>
+    <p>22. Maçonnerie porteuse ordinaire: Construction dont la structure porteuse et résistante aux efforts horizontaux et verticaux est assurée par des murs en maçonnerie traditionnelle.</p>
+    <p>23. Maçonnerie porteuse chaînée (ou confinée): Construction dont la structure porteuse et résistante aux efforts horizontaux et verticaux est assurée par des panneaux en maçonnerie confinés par des chainages horizontaux et verticaux constitués par des armatures en acier enrobées de béton.</p>
+    <p>24. Maçonnerie porteuse armée: Construction dont la structure porteuse et résistante aux efforts horizontaux et verticaux est assurée par des murs en maçonnerie comportant des files d'armatures horizontales et verticales insérées dans les lits de mortier, avec présence de chainages verticaux (notamment aux angles de murs perpendiculaires) et parfois horizontaux.</p>
+    <p>25. Méthode statique équivalente: Analyse statique d'une structure sous l'effet d'un système de forces statiques équivalentes à celui de l'action sismique.</p>
+    <p>26. Méthode d'analyse modale spectrale: Analyse d'une structure sous l'effet d'un séisme représenté par un spectre de response.</p>
+    <p>27. Méthode d'analyse dynamique par accélérogrammes: Méthode d'analyse de la réponse de la structure en fonction du temps, par l'intégration numérique directe des équations différentielles du mouvement, en utilisant les accélérogrammes choisis pour représenter les mouvements du sol réels, enregistrés ou synthétiques.</p>
+    <p>28. Ossature auto stable: Ensemble tridimensionnel de poutres et de poteaux liés rigidement et capable de reprendre la totalité des forces verticales et horizontales.</p>
+    <p>29. Ossature contreventée: Structure constituée de poutres et de poteaux ou de portiques capables de reprendre les charges verticales et de voiles, murs et/ou palées triangulées qui reprennent une partie ou la totalité des charges horizontales.</p>
+    <p>30. Ossature en portique: Structure composée de poteaux et de poutres rigidement liés.</p>
+    <p>31. Ossature spatiale: Structure en portique dans laquelle la résistance aux forces horizontales est assurée principalement par la flexion des éléments barres.</p>
+    <p>32. Palées de stabilité triangulées: Structures de contreventement en treillis dont les éléments sont soumis à des efforts axiaux.</p>
+    <p>33. Protection parasismique: Niveau minimal de protection sismique accordé à un ouvrage, en fonction de sa destination, avant et après un séisme ou de son importance stratégique vis à vis des objectifs de sécurité et des coûts fixés par la collectivité.</p>
+    <p>34. Rigidité effective (du système d'isolation dans une direction principale): Somme des rigidités effectives (sécantes) des unités d'isolation:</p>
+    <ul>
+        <li>La rigidité sécante de chaque unité d'isolation est le rapport de la valeur de la force horizontale transmise à l'unité d'isolation et de la valeur absolue du déplacement de calcul correspondant, qui se produit dans la même direction.</li>
+    </ul>
+</div>
+
+<div class="page">
+    <div class="page-number">28</div>
+    <p>Chapter 1. GÉNÉRALITÉS</p>
+    <ul>
+        <li>La rigidité effective est généralement obtenue par une analyse dynamique itérative.</li>
+    </ul>
+    <p>35. Rupture ductile: Rupture précédée de déformations irréversibles à la différence d'une rupture fragile qui est soudaine et quasi-instantanée.</p>
+    <p>36. Rotule plastique: Zone d'un élément de structure (poutre, poteau, voile, etc.) subissant des déformations irréversibles et capable de dissiper de l'énergie sous sollicitations alternées. Au-delà d'un seuil de sollicitation, elle se comporte comme une articulation autorisant la rotation des autres parties de l'élément.</p>
+    <p>37. Séisme de référence pour les objectifs de limitation de dommages: Evènement sismique relativement fréquent comparativement à la durée de vie utile de la construction. Il est associé à une période de retour de 95 ans.</p>
+    <p>38. Séisme de référence pour les objectifs de non-effondrement: Evènement sismique relativement rare comparativement à la durée de vie utile de la construction. Il est associé à une période de retour de 475 ans.</p>
+    <p>39. Site: Terrain d'implantation retenu pour la construction, caractérisé par un ensemble de conditions géologiques, hydrogéologiques, topographiques et géotechniques.</p>
+    <p>40. Spectre de réponse: Courbe permettant d'évaluer la réponse d'un bâtiment à un séisme passé ou futur.</p>
+    <p>41. Stabilité d'ensemble: Capacité d'une structure à conserver sa géométrie et sa position (non glissement, non renversement) sous l'action des charges. Elle est obtenue par les liaisons des divers éléments, par le contreventement et l'ancrage au sol et requiert que la stabilité de forme et de résistance de ses éléments soit assurée.</p>
+    <p>42. Stabilité de forme: Capacité d'une structure ou de l'un de ses éléments à conserver sa forme sous l'action des charges. L'instabilité de forme due au manque de rigidité se produit pour des éléments élancés ou des parois minces par flambage, cloquage ou déversement, avant que la résistance de leur matériau ne soit épuisée.</p>
+    <p>43. Structure dissipative: Structure capable de dissiper de l'énergie grâce à des déformations post-élastiques lors de sollicitations alternées.</p>
+    <p>44. Système de contreventement: Ensemble d'éléments de construction assurant la rigidité et la stabilité vis à vis des forces horizontales engendrées par le séisme.</p>
+    <p>45. Système d'isolation: Ensemble des composants, utilisés pour fournir une isolation sismique, disposés dans l'interface d'isolation. Ils sont généralement situés en dessous de la masse principale de la structure.</p>
+    <p>46. Superstructure (du système d'isolation): Partie de la structure isolée et située au-dessus de l'interface d'isolation.</p>
+    <p>47. Voile de contreventement: Elément porteur rigide en béton armé destiné à transmettre les charges latérales dans les fondations.</p>
+    <p>48. Mur de contreventement: Elément identique au voile réalisé en maçonnerie chaînée.</p>
+    <p>49. Zone critique: Zone d'une structure où sont concentrées principalement les sollicitations d'origine sismique; elle peut être dissipative ou fragile.</p>
+    <p>50. Zone dissipative: Zone d'une structure dissipative où est localisée sa capacité à dissiper de l'énergie.</p>
+    <p>51. Zone sismique: Partie du territoire national dont les limites sont déterminées en fonction du niveau d'aléa sismique qui la caractérise.</p>
+</div>
+
+<div class="page">
+    <div class="page-number">29</div>
+    <p>1.5 Définitions et notations</p>
+    <h4>1.5.2 Notations</h4>
+    <table>
+        <tr><td>A</td><td>Coefficient d'accélération de zone au rocher</td></tr>
+        <tr><td>\(A_{y}\)</td><td>Coefficient d'accélération de zone vertical</td></tr>
+        <tr><td>B. \(B_{m}\). \(B_{i}\)</td><td>Largeur du bâtiment à la base, en tête, à l'étage &lt;&lt;i&gt;&gt;</td></tr>
+        <tr><td>\(C_{B}\)</td><td>Facteur correcteur tenant compte du diamètre du trou de forage</td></tr>
+        <tr><td>\(C_{E}\)</td><td>Facteur correcteur tenant compte de l'énergie réelle transmise par le mouton lors de l'impact</td></tr>
+        <tr><td>\(C_{N}\)</td><td>Facteur correcteur tenant compte de la pression des terres</td></tr>
+        <tr><td>\(C_{p}\)</td><td>Facteur de force horizontale</td></tr>
+        <tr><td>\(C_{R}\)</td><td>Facteur correcteur tenant compte de la longueur totale de la tige</td></tr>
+        <tr><td>CRR</td><td>Taux de la résistance à la liquéfaction pour un séisme donné</td></tr>
+        <tr><td>\(CRR_{7.5}\)</td><td>Taux de la résistance à la liquéfaction pour un séisme de référence de magnitude \(M_{w}=7.5\)</td></tr>
+        <tr><td>\(C_{S}\) <br> CSR <br> \(C_{T}\)</td><td>Facteur correcteur tenant compte du type de carottier utilisé <br> Taux de la contrainte de cisaillement moyenne durant un séisme <br> Coefficient de période</td></tr>
+        <tr><td>\(C_{u30}\) <br> \(C_{\mu i}\)</td><td>Résistance au cisaillement non drainée sur une profondeur de 30 m <br> Résistance au cisaillement non drainée dans la couche de sol i</td></tr>
+        <tr><td>D</td><td>Hauteur de la paroi à l'aval du soutènement sur laquelle s'exerce la pression passive</td></tr>
+        <tr><td>\(d_{db}\)</td><td>Déplacement de calcul total d'une unité d'isolation</td></tr>
+        <tr><td>\(d_{dc}\)</td><td>Déplacement de calcul du centre de rigidité effectif dans la direction considérée</td></tr>
+        <tr><td>DDL</td><td>Degré(s) de liberté</td></tr>
+        <tr><td>E <br> \(E_{E}\)</td><td>Réponse totale, Réponse totale, action sismique <br> Effet de l'action sismique</td></tr>
+        <tr><td>\(E_{i}\)</td><td>Réponse du mode &lt;&lt;i&gt;&gt;</td></tr>
+        <tr><td>\(E_{p3l}\)</td><td>Module pressiomètrique moyen sur une profondeur de 30 m</td></tr>
+        <tr><td>\(E_{pi}\)</td><td>Module pressiomètrique moyen à travers la couche de sol i</td></tr>
+        <tr><td>\(e_{tot,y}\)</td><td>Excentricité totale dans la direction y</td></tr>
+        <tr><td>FC</td><td>Contenu en fines</td></tr>
+        <tr><td>\(F_{i}\), \(F_{n}\)</td><td>Forces horizontales appliquées aux niveaux «i» et «n»</td></tr>
+        <tr><td>\(f_{j}\)</td><td>Forces horizontales à chaque niveau «j» du bâtiment</td></tr>
+        <tr><td>\(F_{pk}\)</td><td>Force horizontale appliquée à un diaphragme au niveau « k »</td></tr>
+        <tr><td>\(f_{s}\)</td><td>Valeur du frottement latéral unitaire</td></tr>
+        <tr><td>\(F_{t}\)</td><td>Partie de l'effort tranchant à la base, appliquée au niveau «n», en plus de \(F_{n}\)</td></tr>
+        <tr><td>\(F_{R}\)</td><td>Force de rappel de l'unité d'isolation</td></tr>
+        <tr><td>\(F_{vot}\)</td><td>Force sismique verticale appliquée aux portes à faux</td></tr>
+        <tr><td>g</td><td>Accélération due à la pesanteur</td></tr>
+        <tr><td>G</td><td>Action des charges permanentes</td></tr>
+        <tr><td>h</td><td>Facteur de correction d'amortissement</td></tr>
+        <tr><td>H <br> \(h_{ae}\)</td><td>Hauteur de la paroi à l'arrière du mur de soutènement sur laquelle s'exerce la pression active <br> point d'application de la pression active sur le soutènement par rapport à sa base</td></tr>
+        <tr><td>\(h_{i}\), \(h_{i}\), \(h_{n}\)</td><td>Hauteurs de niveaux «i», «j» et «n»; \(h_{i}\) notation utilisée aussi pour Epaisseur de la couche de sol i</td></tr>
+        <tr><td>\(H_{w}\)</td><td>Hauteur du niveau de la nappe phréatique par rapport à la base du mur</td></tr>
+    </table>
+</div>
+
+<div class="page">
+    <div class="page-number">30</div>
+    <table>
+        <tr><td>i</td><td>outre son usage comme indice, i désigne aussi l'Angle de la surface du sol sur l'horizontale</td></tr>
+        <tr><td>I</td><td>Coefficient d'importance</td></tr>
+        <tr><td>\(I_{p}\)</td><td>Indice de plasticité</td></tr>
+        <tr><td>\(K_{0}\)</td><td>Coefficient de poussée du sol au repos</td></tr>
+        <tr><td>\(K_{ae}\) <br> \(K_{eff}\)</td><td>Coefficient de poussée dynamique active <br> Rigidité effective du système d'isolation dans la direction horizontale principale considérée, pour un déplacement égal au déplacement de calcul \(d_{di}\)</td></tr>
+        <tr><td>\(k_{h}\)</td><td>Coefficient sismique horizontal</td></tr>
+        <tr><td>\(K_{pe}\)</td><td>Coefficient de butée dynamique passive</td></tr>
+        <tr><td>\(k_{v}\)</td><td>Coefficient sismique vertical</td></tr>
+        <tr><td>\(K_{v}\)</td><td>Rigidité totale du système d'isolation dans la direction verticale</td></tr>
+        <tr><td>\(K_{xi}\)</td><td>Rigidité effective d'une unité donnée i dans la direction x</td></tr>
+        <tr><td>\(K_{yi}\)</td><td>Rigidité effective d'une unité donnée i dans la direction y</td></tr>
+        <tr><td>\(k_{w}\)</td><td>Coefficient minorateur de R pour les voiles en béton armé</td></tr>
+        <tr><td>L</td><td>Longueur de bâtiment, dimension de plancher perpendiculaire à la direction de l'action sismique</td></tr>
+        <tr><td>\(L_{x}\), \(L_{y}\) <br> \(l_{v}\), ou l1, \(l_{2}\)</td><td>Largeur et longueur de bâtiment dans la direction «x» ou «y» <br> Largeur des décrochements en plan</td></tr>
+        <tr><td>M</td><td>Masse de la superstructure</td></tr>
+        <tr><td>\(M_{s}\)</td><td>Magnitude de surface</td></tr>
+        <tr><td>MSF</td><td>Facteur de correction de magnitude</td></tr>
+        <tr><td>\(M_{w}\)</td><td>Magnitude de moment sismique</td></tr>
+        <tr><td>\(N_{30}\)</td><td>Nombre de coups moyen non corrigé sur une profondeur de 30 m</td></tr>
+        <tr><td>\((N_{1})_{60}\)</td><td>Nombre de coups corrigé en tenant compte de \(C_{N}\); \(C_{E}\); \(C_{B}\); \(C_{R}\) et Cs</td></tr>
+        <tr><td>\((N_{1})_{60cs}\)</td><td>Nombre de coups corrigé par rapport à la présence de fines dans le sol</td></tr>
+        <tr><td>\(N_{i}\)</td><td>Nombre de coups moyen non corrigé enregistré à travers la couche de sol i</td></tr>
+        <tr><td>\(N_{SPT}\)</td><td>Nombre de coups brut mesuré lors de l'essai SPT</td></tr>
+        <tr><td>\(P_{0}\)</td><td>Poussée des terres au repos</td></tr>
+        <tr><td>\(P_{a}\)</td><td>Poussée statique active sans surcharge verticale du sol</td></tr>
+        <tr><td>\(P_{ad}\)</td><td>Poussée active dynamique globale</td></tr>
+        <tr><td>\(P_{ae}\)</td><td>Poussée active dynamique</td></tr>
+        <tr><td>\(P_{pt}\)</td><td>Poussée passive dynamique</td></tr>
+        <tr><td>\(P_{k}\)</td><td>Poids total de la structure et des charges d'exploitation associées au dessus du niveau «k»</td></tr>
+        <tr><td>\(Pl_{30}\)</td><td>Pression limite moyenne sur une profondeur de 30 m</td></tr>
+        <tr><td>\(Pl_{i}\) <br> PLI</td><td>Pression limite moyenne à travers la couche de sol i <br> Indice du potentiel de liquéfaction</td></tr>
+        <tr><td>\(P_{pd}\) <br> \(P_{q}\)</td><td>Poussée passive dynamique globale (Butée) <br> Pénalité à retenir dans la détermination du coefficient \(Q_{F}\)</td></tr>
+        <tr><td>\(P_{r}\)</td><td>Probabilité de dépassement</td></tr>
+        <tr><td>\(P_{wd}\)</td><td>Poussée hydrodynamique de l'eau</td></tr>
+        <tr><td>\(P_{ws}\) <br> q <br> Q</td><td>Poussée statique de l'eau <br> Facteur d'instabilité; notation utilisée aussi pour désigner la surcharge verticale uniforme sur le sol exerçant la pression active <br> Charges d'exploitation; notation utilisée aussi pour désigner la valeur de la résistance de pointe normalisée</td></tr>
+        <tr><td>\(q_{e30}\)</td><td>Résistance de pointe moyenne sur une profondeur de 30 m</td></tr>
+        <tr><td>\(q_{c1N}\)</td><td>Valeur de la résistance pénétrométrique normalisée et corrigée</td></tr>
+        <tr><td>\((q_{c1N})_{cs}\)</td><td>Valeur de la résistance pénétrométrique corrigée par rapport à la présence de fines dans le sol</td></tr>
+        <tr><td>\(q_{ci}\)</td><td>Résistance de pointe moyenne à travers la couche de sol i</td></tr>
+        <tr><td>\(Q_{F}\)</td><td>Facteur de qualité</td></tr>
+    </table>
+    <p>Chapter 1. GÉNÉRALITÉS</p>
+</div>
+
+<div class="page">
+    <div class="page-number">31</div>
+    <p>1.5 Définitions et notations</p>
+    <table>
+        <tr><td>R</td><td>Coefficient de comportement</td></tr>
+        <tr><td>RCI</td><td>Résistance à la compression simple dans la couche de sol i</td></tr>
+        <tr><td>RC30</td><td>Résistance à la compression simple sur une profondeur de 30 m</td></tr>
+        <tr><td>rd</td><td>Coefficient de réduction des contraintes dans le sol</td></tr>
+        <tr><td>Rd</td><td>Sollicitation résistante de calcul de l’élément</td></tr>
+        <tr><td>rij</td><td>Facteur de corrélation entre deux modes i et j</td></tr>
+        <tr><td>ry</td><td>Rayon de torsion du système d’isolation</td></tr>
+        <tr><td>Sad</td><td>Accélération du spectre de calcul normalisé</td></tr>
+        <tr><td>Sad /g</td><td>Accélération spectrale élastique</td></tr>
+        <tr><td>Sd</td><td>Sollicitation agissante de calcul de l’élément</td></tr>
+        <tr><td>Si(i=1,2,3,4), SS</td><td>Symbole désignant les différentes catégories de site</td></tr>
+        <tr><td>ST</td><td>Coefficient d’amplification topographique</td></tr>
+        <tr><td>T</td><td>Période fondamentale de la structure</td></tr>
+        <tr><td>T1, T2</td><td>Périodes caractéristiques associées à la catégorie de site</td></tr>
+        <tr><td>Teff</td><td>Période fondamentale effective de la superstructure correspondant à la translation horizontale, la superstructure étant supposée être un corps rigide</td></tr>
+        <tr><td>Tf</td><td>Période fondamentale de la superstructure supposée fixée à sa base</td></tr>
+        <tr><td>Ti, j,k</td><td>Période des modes «i» , «j» , «k»</td></tr>
+        <tr><td>Tr</td><td>Période de retour</td></tr>
+        <tr><td>Ts</td><td>Durée de la partie stationnaire du mouvement sismique</td></tr>
+        <tr><td>Tv</td><td>Période fondamentale de la superstructure dans la direction verticale, la superstructure étant supposée être un corps rigide</td></tr>
+        <tr><td>V</td><td>Force sismique totale appliquée à la base de la structure</td></tr>
+        <tr><td>Vk</td><td>Effort tranchant au niveau «k»</td></tr>
+        <tr><td>VS</td><td>Vitesse d’onde de cisaillement</td></tr>
+        <tr><td>VS1</td><td>Valeur de la vitesse des ondes de cisaillement normalisée et corrigée</td></tr>
+        <tr><td>V∗S1</td><td>Limite supérieure de la valeur de VS1</td></tr>
+        <tr><td>VS30</td><td>Vitesse d’onde de cisaillement à 30m de profondeur</td></tr>
+        <tr><td>VSi</td><td>Vitesse de l’onde de cisaillement dans la couche de sol i</td></tr>
+        <tr><td>Vt</td><td>Force sismique totale (combinaison des valeurs modales)</td></tr>
+        <tr><td>Vu</td><td>Effort tranchant de calcul à l’état limite ultime (ELU) de la structure ou d’éléments de la structure</td></tr>
+        <tr><td>W</td><td>Poids sismique total de la structure</td></tr>
+        <tr><td>Wg</td><td>Charge gravitaire de la structure</td></tr>
+        <tr><td>Wi</td><td>Poids sismique au niveau « i »</td></tr>
+        <tr><td>Wn</td><td>Teneur en eau naturelle</td></tr>
+        <tr><td>Wp</td><td>Poids de l’élément non structural considéré</td></tr>
+        <tr><td>Wpk</td><td>Poids du diaphragme et des éléments tributaires au niveau «k»</td></tr>
+        <tr><td>(xi, yi)</td><td>Coordonnées de l’unité d’isolation «i» par rapport au centre de rigidité effectif</td></tr>
+    </table>
+</div>
+
+<div class="page">
+    <div class="page-number">32</div>
+    <p>Chapter 1. GÉNÉRALITÉS</p>
+    <table>
+        <tr><td>α</td><td>Inclinaison du plan de rupture potentiel</td></tr>
+        <tr><td>β</td><td>Inclinaison du soutènement (parement amont) par rapport à l’axe vertical</td></tr>
+        <tr><td>γ</td><td>poids volumique total (ou humide) du sol</td></tr>
+        <tr><td>γd</td><td>poids volumique du sol sec</td></tr>
+        <tr><td>γ′</td><td>poids volumique effectif de sol (déjaugée)</td></tr>
+        <tr><td>γ∗</td><td>Poids volumique du sol</td></tr>
+        <tr><td>γsat</td><td>poids volumique du sol saturé</td></tr>
+        <tr><td>γw</td><td>poids volumique de l’eau</td></tr>
+        <tr><td>γx</td><td>Coefficient de majoration</td></tr>
+        <tr><td>δ</td><td>Angle de frottement sol/soutènement</td></tr>
+        <tr><td>δi</td><td>Coefficient d’amplification</td></tr>
+        <tr><td>δek</td><td>Déplacement horizontal dû aux forces Fi</td></tr>
+        <tr><td>δi</td><td>Flèche horizontale due à fi; notation utilisée aussi pour Coefficient d’amplification</td></tr>
+        <tr><td>δk</td><td>Déplacement horizontal au niveau «k»</td></tr>
+        <tr><td>∆k</td><td>Déplacement horizontal relatif au niveau « k » par rapport au niveau «k-1»</td></tr>
+        <tr><td>δn</td><td>Déplacement horizontal au sommet de la structure, niveau «n»</td></tr>
+        <tr><td>η</td><td>Facteur de correction d’amortissement</td></tr>
+        <tr><td>θ</td><td>Facteur d’instabilité</td></tr>
+        <tr><td>ν</td><td>Effort normal réduit</td></tr>
+        <tr><td>νA</td><td>Coefficient réducteur, appliqué à l’accélération de zone</td></tr>
+        <tr><td>ρij</td><td>Rapport des périodes de deux modes «i» et «j»</td></tr>
+        <tr><td>σv0</td><td>Contraintes verticales totales dans le sol</td></tr>
+        <tr><td>σ′v0</td><td>Contraintes verticales totales dans le sol</td></tr>
+        <tr><td>ξ , ξi, ξj</td><td>Pourcentage d’amortissement critique global et ceux relatifs aux modes «i» et «j»</td></tr>
+        <tr><td>ξeff</td><td>Amortissement effectif</td></tr>
+        <tr><td>ψ</td><td>Coefficient d’accompagnement</td></tr>
+        <tr><td>φl</td><td>Diamètre des barres longitudinales</td></tr>
+        <tr><td>φ′</td><td>Angle de frottement interne du sol</td></tr>
+    </table>
+</div>
+
+</body>
+</html>
