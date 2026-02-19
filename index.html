@@ -781,7 +781,31 @@
             color: var(--text-primary); 
             box-shadow: 0 4px 20px rgba(255, 214, 0, 0.3); 
         }
-        
+        /* تنسيق صور الأعضاء */
+.team-card img,
+.member-item img {
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover img,
+.member-item:hover img {
+    transform: scale(1.1);
+}
+
+/* تنسيق البطاقات المحسن */
+.team-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f5f7fa 100%);
+}
+
+.member-item {
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.member-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
         .chapter-action-pdf:hover { 
             transform: translateY(-3px); 
             box-shadow: 0 8px 30px rgba(255, 214, 0, 0.4); 
@@ -2304,15 +2328,30 @@
 
         // Work Group Data
         const workGroupData = {
-            president: {
-                title: "Président & Rapporteur",
-                icon: "fa-user-tie",
-                members: [
-                    { role: "Président du GTS RPA 2024", name: "BOUARIOUA Rédha", org: "MHUV" },
-                    { role: "Rapporteur du GTS RPA 2024", name: "BOUKRI Mehdi", org: "CGS" },
-                    { role: "Coordinateur général", name: "MEBARKI Ahmed", org: "U. Gustave Eiffel, France" }
-                ]
+           president: {
+        title: "Président & Rapporteur",
+        icon: "fa-user-tie",
+        members: [
+            { 
+                role: "Président du GTS RPA 2024", 
+                name: "BOUARIOUA Rédha", 
+                org: "MHUV",
+                photo: "images/members/bouarioua-redha.png" // مسار الصورة
             },
+            { 
+                role: "Rapporteur du GTS RPA 2024", 
+                name: "BOUKRI Mehdi", 
+                org: "CGS",
+                photo: "images/members/boukri-mehdi.jpg"
+            },
+            { 
+                role: "Coordinateur général", 
+                name: "MEBARKI Ahmed", 
+                org: "U. Gustave Eiffel, France",
+                photo: "images/members/mebarki-ahmed.jpg"
+            }
+        ]
+    },
             sg1: {
                 title: "Sous-Groupe n°01 : Aléa sismique",
                 icon: "fa-earthquake",
@@ -2425,77 +2464,100 @@
         };
 
         function renderWorkGroup(group) {
-            const data = workGroupData[group];
-            const container = document.getElementById('workGroupContent');
-            
-            let html = `
-                <div class="work-group-header">
-                    <div class="work-group-icon"><i class="fas ${data.icon}"></i></div>
-                    <h2 class="work-group-title">${data.title}</h2>
-                    ${data.text ? `<p style="color: var(--text-muted); font-size: 1rem; max-width: 800px; margin: 0 auto;">${data.text}</p>` : ''}
+    const data = workGroupData[group];
+    const container = document.getElementById('workGroupContent');
+    
+    let html = `
+        <div class="work-group-header">
+            <div class="work-group-icon"><i class="fas ${data.icon}"></i></div>
+            <h2 class="work-group-title">${data.title}</h2>
+            ${data.text ? `<p style="color: var(--text-muted); font-size: 1rem; max-width: 800px; margin: 0 auto;">${data.text}</p>` : ''}
+        </div>
+    `;
+
+    if (data.president) {
+        // عرض البطاقات مع الصور للرئيس والمسؤولين
+        html += `<div class="team-grid" style="margin-bottom: 20px;">`;
+        
+        html += `
+            <div class="team-card" style="text-align: center; padding: 30px;">
+                <div style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 4px solid var(--bright-gold); box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                    <img src="${data.president.photo || 'images/default-avatar.jpg'}" 
+                         alt="${data.president.name}"
+                         style="width: 100%; height: 100%; object-fit: cover;"
+                         onerror="this.src='https://via.placeholder.com/120?text=Photo'">
+                </div>
+                <div class="team-role">${data.president.role}</div>
+                <div class="team-name" style="font-size: 1.3rem;">${data.president.name}</div>
+                <div class="team-org"><i class="fas fa-building" style="margin-right: 5px; color: var(--bright-blue);"></i>${data.president.org}</div>
+            </div>
+        `;
+        
+        if (data.vicePresident) {
+            html += `
+                <div class="team-card" style="text-align: center; padding: 30px;">
+                    <div style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 4px solid var(--bright-blue); box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                        <img src="${data.vicePresident.photo || 'images/default-avatar.jpg'}" 
+                             alt="${data.vicePresident.name}"
+                             style="width: 100%; height: 100%; object-fit: cover;"
+                             onerror="this.src='https://via.placeholder.com/120?text=Photo'">
+                    </div>
+                    <div class="team-role">${data.vicePresident.role}</div>
+                    <div class="team-name" style="font-size: 1.3rem;">${data.vicePresident.name}</div>
+                    <div class="team-org"><i class="fas fa-building" style="margin-right: 5px; color: var(--bright-blue);"></i>${data.vicePresident.org}</div>
                 </div>
             `;
-
-            if (data.president) {
-                html += `<div class="team-grid" style="margin-bottom: 20px;">`;
-                html += `<div class="team-card">
-                    <div class="team-role">Président</div>
-                    <div class="team-name">${data.president.name}</div>
-                    <div class="team-org">${data.president.org}</div>
-                </div>`;
-                if (data.vicePresident) {
-                    html += `<div class="team-card">
-                        <div class="team-role">Vice-Président</div>
-                        <div class="team-name">${data.vicePresident.name}</div>
-                        <div class="team-org">${data.vicePresident.org}</div>
-                    </div>`;
-                }
-                if (data.rapporteur) {
-                    html += `<div class="team-card">
-                        <div class="team-role">Rapporteur</div>
-                        <div class="team-name">${data.rapporteur.name}</div>
-                        <div class="team-org">${data.rapporteur.org}</div>
-                    </div>`;
-                }
-                if (data.rapporteuse) {
-                    html += `<div class="team-card">
-                        <div class="team-role">Rapporteuse</div>
-                        <div class="team-name">${data.rapporteuse.name}</div>
-                        <div class="team-org">${data.rapporteuse.org}</div>
-                    </div>`;
-                }
-                if (data.coordinateur) {
-                    html += `<div class="team-card">
-                        <div class="team-role">Coordinateur</div>
-                        <div class="team-name">${data.coordinateur.name}</div>
-                        <div class="team-org">${data.coordinateur.org}</div>
-                    </div>`;
-                }
-                html += `</div>`;
-            }
-
-            if (data.members && data.members.length > 0) {
-                html += `
-                    <div class="subgroup-section">
-                        <div class="subgroup-title"><i class="fas fa-users"></i> Membres</div>
-                        <div class="members-list">
-                `;
-                data.members.forEach(member => {
-                    html += `
-                        <div class="member-item">
-                            <div class="member-icon"><i class="fas fa-user"></i></div>
-                            <div class="member-info">
-                                <div class="member-name">${member.name}</div>
-                                <div class="member-org">${member.org}</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                html += `</div></div>`;
-            }
-
-            container.innerHTML = html;
         }
+        
+        if (data.rapporteur) {
+            html += `
+                <div class="team-card" style="text-align: center; padding: 30px;">
+                    <div style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 4px solid var(--bright-green); box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                        <img src="${data.rapporteur.photo || 'images/default-avatar.jpg'}" 
+                             alt="${data.rapporteur.name}"
+                             style="width: 100%; height: 100%; object-fit: cover;"
+                             onerror="this.src='https://via.placeholder.com/120?text=Photo'">
+                    </div>
+                    <div class="team-role">${data.rapporteur.role}</div>
+                    <div class="team-name" style="font-size: 1.3rem;">${data.rapporteur.name}</div>
+                    <div class="team-org"><i class="fas fa-building" style="margin-right: 5px; color: var(--bright-blue);"></i>${data.rapporteur.org}</div>
+                </div>
+            `;
+        }
+        
+        html += `</div>`;
+    }
+
+    // ... باقي الكود للأعضاء العاديين
+    if (data.members && data.members.length > 0) {
+        html += `
+            <div class="subgroup-section">
+                <div class="subgroup-title"><i class="fas fa-users"></i> Membres</div>
+                <div class="members-list">
+        `;
+        
+        data.members.forEach(member => {
+            html += `
+                <div class="member-item" style="flex-direction: column; text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; margin-bottom: 15px; border-radius: 50%; overflow: hidden; border: 3px solid var(--bright-green);">
+                        <img src="${member.photo || 'images/default-avatar.jpg'}" 
+                             alt="${member.name}"
+                             style="width: 100%; height: 100%; object-fit: cover;"
+                             onerror="this.src='https://via.placeholder.com/80?text=Photo'">
+                    </div>
+                    <div class="member-info">
+                        <div class="member-name" style="font-size: 1rem; white-space: normal;">${member.name}</div>
+                        <div class="member-org" style="font-size: 0.8rem;">${member.org}</div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `</div></div>`;
+    }
+
+    container.innerHTML = html;
+}
 
         // Chapters Data
         const chaptersData = [
