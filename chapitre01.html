@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DTR - Généralités</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  h1, h2, h3 {
+    color: #004080;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .accordion {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .accordion-header {
+    cursor: pointer;
+    padding: 15px 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+  }
+  .accordion-header::after {
+    content: '\25BC';
+    font-size: 12px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s;
+  }
+  .accordion-header.active::after {
+    transform: rotate(-180deg);
+  }
+  .accordion-content {
+    display: none;
+    padding: 15px 20px;
+    background-color: #f5f5f5;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<h1>DTR - Généralités</h1>
+
+<div class="accordion">
+  <div class="accordion-header">1.1 Objet</div>
+  <div class="accordion-content">
+    <p>Le présent Document Technique Réglementaire (DTR) fixe les règles de conception et de calcul des constructions en zones sismiques.</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">1.2 Objectifs</div>
+  <div class="accordion-content">
+    <p>En zone sismique, les structures doivent être conçues et construites de sorte que soient respectés :</p>
+    <ul>
+      <li>les objectifs de non-effondrement</li>
+      <li>les objectifs de limitation des dommages</li>
+    </ul>
+
+    <div class="accordion">
+      <div class="accordion-header">1.2.1 Objectifs de non-effondrement</div>
+      <div class="accordion-content">
+        <p>La structure doit résister aux actions sismiques de calcul définies au § 3.3...</p>
+        <ul>
+          <li>Accélération de zone, A : valeur caractéristique Ak</li>
+          <li>Coefficient de site, S : rend compte de la classe de site</li>
+          <li>Coefficient d’importance, I : rend compte de la classe d’importance du bâtiment</li>
+        </ul>
+        <p>Tr = -TL / Ln(1−Pr)</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">1.2.2 Objectifs de limitation des dommages</div>
+      <div class="accordion-content">
+        <p>La structure doit non seulement résister à la valeur caractéristique Ak, mais être conçue pour éviter les dommages induisant des limitations d’exploitation...</p>
+        <ul>
+          <li>Probabilité de dépassement Pr,LD = 10%</li>
+          <li>Période de référence TL,LD = 10 ans</li>
+          <li>Période de retour Tr,LD = 95 ans</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">1.3 Domaine d’application</div>
+  <div class="accordion-content">
+    <p>Le DTR est applicable à toutes les constructions courantes...</p>
+    <ul>
+      <li>Non applicable aux centrales nucléaires, barrages, tunnels, etc.</li>
+      <li>Applicable aux bâtiments utilisant les systèmes de contreventement listés dans le Tableau (3.17)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">1.4 Conditions d’application</div>
+  <div class="accordion-content">
+    <p>Le DTR s’applique en complément des autres DTR et nécessite coordination et coopération entre les intervenants...</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">1.5 Définitions et notations</div>
+  <div class="accordion-content">
+    <p>Quelques définitions clés :</p>
+    <ul>
+      <li>Amortissement effectif : Valeur de l’amortissement visqueux d’un système d’isolation</li>
+      <li>Bâtiment de grande longueur : distance entre deux appuis > 200 m</li>
+      <li>Béton confiné : volume de béton avec armatures transversales</li>
+      <li>Centre de rigidité effectif : centre de rigidité des unités d’isolation</li>
+      <li>... et plus de 50 autres définitions.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      header.classList.toggle('active');
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
