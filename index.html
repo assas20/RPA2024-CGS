@@ -2217,26 +2217,28 @@
 
         // Open Video Modal
         function openVideo(video) {
-            const content = `
-                <div class="video-container">
-                    <iframe src="${video.embedUrl}" 
-                            title="${video.title}"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div style="padding: 20px;">
-                    <h3 style="margin-bottom: 10px; color: var(--text-primary);">${video.title}</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">
-                        <i class="fas fa-map-marker-alt" style="color: var(--bright-red);"></i> ${video.location} | 
-                        <i class="fas fa-calendar" style="color: var(--bright-blue);"></i> ${video.date} |
-                        <i class="fas fa-ruler-horizontal" style="color: var(--bright-orange);"></i> Magnitude: ${video.magnitude}
-                    </p>
-                    <p style="color: var(--text-secondary); line-height: 1.6;">${video.description}</p>
-                </div>
-            `;
-            openModal('Vidéo du Séisme', content);
-        }
+    // فتح الفيديو مباشرة في YouTube بدلاً من التضمين
+    window.open(video.youtubeUrl || video.embedUrl.replace('embed/', 'watch?v='), '_blank');
+    
+    // أو عرض صفحة وسيطة
+    const content = `
+        <div style="padding: 40px; text-align: center;">
+            <img src="${video.thumbnail}" style="width: 100%; max-width: 640px; border-radius: 10px; margin-bottom: 30px;" alt="${video.title}">
+            <h2 style="margin-bottom: 20px; color: var(--text-primary);">${video.title}</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem;">
+                Ce vidéo sera ouvert sur YouTube dans un nouvel onglet
+            </p>
+            <a href="${video.youtubeUrl || 'https://youtube.com/watch?v=' + video.embedUrl.split('/').pop()}" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 40px; background: #FF0000; color: white; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 1.1rem;">
+                <i class="fab fa-youtube" style="font-size: 1.3rem;"></i>
+                Regarder la vidéo
+            </a>
+        </div>
+    `;
+    openModal('Vidéo du Séisme', content);
+}
 
         // Open News Modal
         function openNews(news) {
@@ -2676,16 +2678,19 @@
         // Videos Data - Example data for earthquakes in Algeria and worldwide
         const videosData = [
             {
-                id: 1,
-                title: "Séisme de Boumerdès 2003 - Retour sur la catastrophe",
-                location: "Boumerdès, Algérie",
-                date: "21 Mai 2003",
-                magnitude: "6.8 Mw",
-                duration: "02:01",
-                thumbnail: "https://img.youtube.com/vi/EXAMPLE1/maxresdefault.jpg",
-                embedUrl: "https://www.youtube.com/embed/aSmcI1Oq0Og",
-                description: "Documentaire sur le séisme dévastateur qui a frappé la région de Boumerdès en 2003, faisant plus de 2200 victimes. Analyse des dommages et des leçons apprises pour la construction parasismique en Algérie."
-            },
+        id: 1,
+        title: "Séisme de Boumerdès 2003 - Retour sur la catastrophe",
+        location: "Boumerdès, Algérie",
+        date: "21 Mai 2003",
+        magnitude: "6.8 Mw",
+        duration: "02:01",
+        thumbnail: "https://img.youtube.com/vi/aSmcI1Oq0Og/0.jpg",
+        embedUrl: "https://www.youtube.com/embed/aSmcI1Oq0Og?rel=0&modestbranding=1",
+        // ?rel=0 = لا يعرض فيديوهات ذات صلة من قنوات أخرى
+        // &modestbranding=1 = يخفي شعار YouTube قدر الإمكان
+        youtubeUrl: "https://youtu.be/aSmcI1Oq0Og", // رابط المشاهدة المباشرة
+        description: "Documentaire sur le séisme dévastateur..."
+    },
             {
                 id: 2,
                 title: "Séisme d'Al Asnam 1980 - Archives historiques",
@@ -2693,19 +2698,21 @@
                 date: "10 Octobre 1980",
                 magnitude: "7.3 Ms",
                 duration: "08:30",
-                thumbnail: "https://img.youtube.com/vi/EXAMPLE2/maxresdefault.jpg",
-                embedUrl: "https://www.youtube.com/embed/EXAMPLE2",
-                description: "Images d'archives du séisme d'Al Asnam, l'un des plus destructeurs de l'histoire algérienne. Témoignages et analyse des conséquences sur l'urbanisme algérien."
+                thumbnail: "https://img.youtube.com/vi/9RzrjhBf_hY/maxresdefault.jpg",
+    embedUrl: "https://www.youtube.com/embed/J1hfSQdQQ48",
+    youtubeUrl: "https://youtu.be/J1hfSQdQQ48", // للرجوع إليه
+    description: "Images d'archives du séisme d'Al Asnam, l'un des plus destructeurs de l'histoire algérienne. Témoignages et analyse des conséquences sur l'urbanisme algérien."
             },
             {
                 id: 3,
-                title: "Séisme de Djijel 2024 - Dernières actualités",
+                title: "Séisme de jijel 2024 - Dernières actualités",
                 location: "Djijel, Algérie",
                 date: "17 Mars 2024",
                 magnitude: "4.9 Mw",
                 duration: "03:15",
-                thumbnail: "https://img.youtube.com/vi/EXAMPLE3/maxresdefault.jpg",
-                embedUrl: "https://www.youtube.com/embed/EXAMPLE3",
+                thumbnail: "https://img.youtube.com/vi/tbr3rc96V2g/maxresdefault.jpg",
+                embedUrl: "https://www.youtube.com/embed/tbr3rc96V2g",
+                youtubeUrl: "https://youtu.be/tbr3rc96V2g", // للرجوع إليه
                 description: "Reportage sur le séisme récent de Djijel et l'application des nouvelles normes RPA 2024 dans la région."
             },
             {
@@ -2715,8 +2722,9 @@
                 date: "11 Mars 2011",
                 magnitude: "9.1 Mw",
                 duration: "25:10",
-                thumbnail: "https://img.youtube.com/vi/EXAMPLE4/maxresdefault.jpg",
-                embedUrl: "https://www.youtube.com/embed/EXAMPLE4",
+                thumbnail: "https://img.youtube.com/vi/LEK0jWkCzX4/maxresdefault.jpg",
+                embedUrl: "https://www.youtube.com/embed/LEK0jWkCzX4",
+                youtubeUrl: "https://youtu.be/LEK0jWkCzX4", // للرجوع إليه
                 description: "Analyse du séisme sous-marin le plus puissant jamais enregistré au Japon et de ses conséquences catastrophiques."
             },
             {
@@ -2726,8 +2734,10 @@
                 date: "6 Février 2023",
                 magnitude: "7.8 Mw",
                 duration: "18:45",
-                thumbnail: "https://img.youtube.com/vi/EXAMPLE5/maxresdefault.jpg",
-                embedUrl: "https://www.youtube.com/embed/EXAMPLE5",
+                thumbnail: "https://img.youtube.com/vi/sAmDXldXM6w/maxresdefault.jpg",
+                embedUrl: "https://www.youtube.com/embed/sAmDXldXM6w",
+                                youtubeUrl: "https://youtu.be/sAmDXldXM6w", // للرجوع إليه
+
                 description: "Documentation des deux séismes majeurs qui ont frappé la Turquie et la Syrie, causant plus de 50 000 victimes."
             },
             {
