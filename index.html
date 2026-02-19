@@ -1620,7 +1620,56 @@
             letter-spacing: 1px; 
             font-weight: 700; 
         }
-        
+        .hero-btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+}
+
+.hero-btn-primary {
+    background: rgba(0, 200, 83, 0.9);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 200, 83, 0.5);
+    background: rgba(0, 200, 83, 1);
+}
+
+.hero-btn-secondary {
+    background: rgba(41, 121, 255, 0.9);
+    color: white;
+    box-shadow: 0 4px 20px rgba(41, 121, 255, 0.4);
+}
+
+.hero-btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(41, 121, 255, 0.5);
+    background: rgba(41, 121, 255, 1);
+}
+
+.hero-btn-accent {
+    background: rgba(170, 0, 255, 0.9);
+    color: white;
+    box-shadow: 0 4px 20px rgba(170, 0, 255, 0.4);
+}
+
+.hero-btn-accent:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(170, 0, 255, 0.5);
+    background: rgba(170, 0, 255, 1);
+}
         .footer-links ul { list-style: none; }
         
         .footer-links li { margin-bottom: 10px; }
@@ -1878,6 +1927,131 @@
                 transform: scale(0.98);
             }
         }
+
+        /* ... الأنماط السابقة ... */
+    
+    /* خلفية الواجهة الرئيسية */
+    .hero-section {
+        position: relative;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 20px;
+        overflow: hidden;
+    }
+    
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/background.jpg'); /* مسار صورتك */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0;
+    }
+    
+    /* طبقة داكنة فوق الصورة للقراءة الأفضل */
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(26, 35, 126, 0.7); /* لون أزرق داكن شفاف */
+        /* أو استخدم تدرج */
+        background: linear-gradient(135deg, rgba(26, 35, 126, 0.8) 0%, rgba(0, 200, 83, 0.6) 100%);
+        z-index: 1;
+    }
+    
+    /* محتوى النص */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+    }
+    
+    /* تأثيرات إضافية للنص */
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 214, 0, 0.9);
+        color: var(--text-primary);
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        backdrop-filter: blur(10px);
+    }
+    
+    .hero-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        letter-spacing: 5px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+        color: rgba(255,255,255,0.95);
+        margin-bottom: 20px;
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.9);
+        max-width: 600px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+    }
+    
+    /* تأثيرات عائمة */
+    .hero-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+    }
+    
+    .particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 214, 0, 0.3);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+    }
+    
+    /* تجاوب */
+    @media (max-width: 768px) {
+        .hero-title { font-size: 3rem; letter-spacing: 2px; }
+        .hero-subtitle { font-size: 1.2rem; }
+        .hero-description { font-size: 1rem; }
+    }
     </style>
 </head>
 <body>
@@ -1966,29 +2140,46 @@
     <div class="main-container">
         
         <!-- Home View -->
-        <div class="content-view active" id="homeView">
-            <div style="text-align: center; padding: 40px 15px;">
-                <div style="display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-gold); color: var(--text-primary); padding: 12px 30px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 25px; box-shadow: var(--shadow-gold);">
-                    <i class="fas fa-file-contract"></i> Document Technique Réglementaire
-                </div>
-                <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; margin-bottom: 15px; background: linear-gradient(135deg, var(--bright-blue) 0%, var(--bright-green) 50%, var(--bright-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 3px;">RPA 2024</h1>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 15px; font-weight: 500; letter-spacing: 1px;">Règles Parasismiques Algériennes</p>
-                <p style="font-size: 1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 25px; line-height: 1.7; padding: 0 15px;">
-                    Normes et réglementations techniques pour la conception et la construction parasismique en Algérie.
-                </p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <button onclick="showChaptersList()" style="padding: 12px 30px; background: var(--gradient-green); color: white; border: none; border-radius: 25px; font-size: 0.9rem; font-weight: 700; cursor: pointer; box-shadow: var(--shadow-green); transition: all 0.3s;">
-                        <i class="fas fa-book"></i> Consulter les Chapitres
-                    </button>
-                    <button onclick="showWorkGroup('president')" style="padding: 12px 30px; background: var(--gradient-blue); color: white; border: none; border-radius: 25px; font-size: 0.9rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 20px rgba(41, 121, 255, 0.3); transition: all 0.3s;">
-                        <i class="fas fa-users"></i> Groupe de Travail
-                    </button>
-                    <button onclick="showVideosNews()" style="padding: 12px 30px; background: var(--gradient-purple); color: white; border: none; border-radius: 25px; font-size: 0.9rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 20px rgba(170, 0, 255, 0.3); transition: all 0.3s;">
-                        <i class="fas fa-video"></i> Vidéos & News
-                    </button>
-                </div>
+        <!-- Home View -->
+<div class="content-view active" id="homeView">
+    <div class="hero-section">
+        <!-- الخلفية -->
+        <div class="hero-background"></div>
+        
+        <!-- طبقة التظليل -->
+        <div class="hero-overlay"></div>
+        
+        <!-- تأثيرات عائمة (اختياري) -->
+        <div class="hero-particles" id="particles"></div>
+        
+        <!-- المحتوى -->
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-file-contract"></i> Document Technique Réglementaire
+            </div>
+            
+            <h1 class="hero-title">RPA 2024</h1>
+            
+            <p class="hero-subtitle">Règles Parasismiques Algériennes</p>
+            
+            <p class="hero-description">
+                Normes et réglementations techniques pour la conception et la construction parasismique en Algérie.
+            </p>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <button onclick="showChaptersList()" class="hero-btn hero-btn-primary">
+                    <i class="fas fa-book"></i> Consulter les Chapitres
+                </button>
+                <button onclick="showWorkGroup('president')" class="hero-btn hero-btn-secondary">
+                    <i class="fas fa-users"></i> Groupe de Travail
+                </button>
+                <button onclick="showVideosNews()" class="hero-btn hero-btn-accent">
+                    <i class="fas fa-video"></i> Vidéos & News
+                </button>
             </div>
         </div>
+    </div>
+</div>
 
         <!-- Work Group Views -->
         <div class="content-view" id="workGroupView">
@@ -2356,10 +2547,10 @@
                 title: "Sous-Groupe n°01 : Aléa sismique",
                 icon: "fa-earthquake",
                 president: { name: "LAOUAMI Nasser", org: "CGS" },
-                vicePresident: { name: "BELDJOUDI Hamoud", org: "CRAAG" },
-                rapporteur: { name: "GHERBOUDJ Faouzi", org: "CGS" },
+                vicePresident: { name: "BELDJOUDI Hamoud", org: "CRAAG",photo: "images/members/BELDJOUDI-Hamoud.jpg" },
+                rapporteur: { name: "GHERBOUDJ Faouzi", org: "CGS",photo: "images/members/GHERBOUDJ-Faouzi.jpg" },
                 members: [
-                    { name: "AYADI Abdelkrim", org: "CRAAG" },
+                    { name: "AYADI Abdelkrim", org: "CRAAG",photo: "images/members/Abdelhakim-Ayadi.jpg" },
                     { name: "BENOUAR Djillali", org: "AAST, retraité, USTHB" },
                     { name: "BOUDIAF Azeddine", org: "retraité, France" },
                     { name: "BOUHADAD Youcef", org: "CGS" },
@@ -2941,7 +3132,24 @@
                 </div>
             `).join('');
         }
+// إنشاء جزيئات عائمة
+function createParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+    
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        container.appendChild(particle);
+    }
+}
 
+// تشغيل عند تحميل الصفحة
+window.addEventListener('load', createParticles);
         // Dropdown toggle for mobile
         function toggleDropdown(e) {
             if (window.innerWidth <= 768) {
